@@ -97,3 +97,66 @@ const anotherFunc = function someCoolNameFunc(a, b){
 console.log(anotherFunc);
 console.log(anotherFunc(20,50));
 
+
+
+// Arrow Functions
+// var varName = () => {}
+
+var myFirstArrowFunc = () => {}
+console.log(myFirstArrowFunc);
+console.log(typeof myFirstArrowFunc);
+
+
+// Arrow Function with parameters
+
+// Remove the word 'function' and replace with '=>' between args and {code}
+var addNumsArrow = (num1, num2) => {
+    return num1 + num2
+}
+
+console.log(addNumsArrow(5,20));
+
+// If {code} is one line with only return, you can remove {} and 'return'
+var addNumsArrow2 = (num1, num2) => num1 + num2
+
+console.log(addNumsArrow2(5,20));
+
+
+// If one and only one parameter, parentheses around it are not necessary
+var addTen = num => num + 10
+
+console.log(addTen(24));
+
+
+console.log("EXERCISE 2 AS ARROW:")
+
+// Create an arrow function for exercise 2 of last night's homework
+
+let numbers = [10, 12, -9, 3, -1, 0, 15]
+
+// set a variable to keep track of our sum, start with 0
+let positiveNumSum = 0
+// Loop through the array of numbers
+for (let n of numbers){
+    // Check if the n is positive (n>0)
+    if (n>0){
+        // Add n to our total of positive numbers
+        positiveNumSum += n
+    }
+}
+
+console.log(positiveNumSum);
+
+
+var totalPositives = arr => {
+    let posTotal = 0;
+    for(let num of arr){
+        if (num > 0){
+            posTotal += num
+        }
+    }
+    return posTotal
+}
+
+
+console.log(totalPositives([2, 4, 6, -12, -4, 4, 23, -53])); //39
