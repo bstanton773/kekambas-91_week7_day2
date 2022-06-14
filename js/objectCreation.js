@@ -41,3 +41,32 @@ console.log(person3);
 console.log(person3.sayHello);
 
 person3.sayHello();
+
+console.clear()
+// JavaScript Object Instantiation -> classes
+
+let animal = {};
+animal.name = 'Buddy';
+animal.energy = 10;
+
+animal.eat = function(amount){
+    this.energy += amount;
+    console.log(`${this.name} is eating and energy is now ${this.energy}`)
+}
+
+animal.sleep = function(amount){
+    this.energy += amount;
+    console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+}
+
+animal.play = function(amount){
+    this.energy -= amount;
+    console.log(`${this.name} is playing and energy is now ${this.energy}`)
+}
+console.log(animal);
+
+animal.eat(10);
+animal.play(15);
+animal.sleep(20);
+console.log(animal);
+
