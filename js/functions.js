@@ -160,3 +160,27 @@ var totalPositives = arr => {
 
 
 console.log(totalPositives([2, 4, 6, -12, -4, 4, 23, -53])); //39
+
+
+// Write a function to find the max number in an array
+// 0 < length of the array < 100
+// Ex 1: [3, 7, 2, 8, 10, 4, 11] Output: 11
+// Ex 2: [33, 88, 55, 22, 11, 44] Output: 88
+// Ex 3: [10] Output: 10
+
+
+const maxNum = arr => {
+    let currentMax = arr[0];
+    for (let num of arr){
+        if (num > currentMax){
+            currentMax = num
+        }
+    }
+    return currentMax
+}
+
+
+console.log('=======')
+console.log(maxNum([3, 7, 2, 8, 10, 4, 11]))
+console.log(maxNum([33, 88, 55, 22, 11, 44]))
+console.log(maxNum([10]))
