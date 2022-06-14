@@ -235,12 +235,52 @@ console.log(typeof doNothing.prototype);
 //////////////////////////////
 
 
-function Animal(name, energy=10){
-    let animal = Object.create(Animal.prototype);
-    animal.name = name;
-    animal.energy = energy;
+// function Animal(name, energy=10){
+//     let animal = Object.create(Animal.prototype);
+//     animal.name = name;
+//     animal.energy = energy;
 
-    return animal
+//     return animal
+// }
+
+
+// Animal.prototype.eat = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is eating and energy is now ${this.energy}`)
+// }
+
+// Animal.prototype.sleep = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+// }
+
+// Animal.prototype.play = function(amount){
+//     this.energy -= amount;
+//     console.log(`${this.name} is playing and energy is now ${this.energy}`)
+// }
+
+// let buddy = Animal('Buddy', 10);
+// buddy.eat(10);
+// buddy.play(5);
+// console.log(buddy);
+
+// let leo = Animal('Leo', 20);
+// leo.eat(5);
+// leo.play(15);
+// console.log(leo);
+
+
+///////////////////////////////////
+// Pseudoclassical Instantiation //
+///////////////////////////////////
+
+
+function Animal(name, energy=10){
+    // let animal = Object.create(Animal.prototype);
+    this.name = name;
+    this.energy = energy;
+
+    // return this
 }
 
 
@@ -259,12 +299,12 @@ Animal.prototype.play = function(amount){
     console.log(`${this.name} is playing and energy is now ${this.energy}`)
 }
 
-let buddy = Animal('Buddy', 10);
+let buddy = new Animal('Buddy', 10);
 buddy.eat(10);
 buddy.play(5);
 console.log(buddy);
 
-let leo = Animal('Leo', 20);
+let leo = new Animal('Leo', 20);
 leo.eat(5);
 leo.play(15);
 console.log(leo);
