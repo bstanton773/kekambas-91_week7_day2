@@ -114,42 +114,42 @@ console.clear()
 // Function Instantiation with Shared Methods //
 ////////////////////////////////////////////////
 
-const animalMethods = {
-    eat: function(amount){
-        this.energy += amount;
-        console.log(`${this.name} is eating and energy is now ${this.energy}`)
-    },
-    sleep: function(amount){
-        this.energy += amount;
-        console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
-    },
-    play: function(amount){
-        this.energy -= amount;
-        console.log(`${this.name} is playing and energy is now ${this.energy}`)
-    }
-}
+// const animalMethods = {
+//     eat: function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is eating and energy is now ${this.energy}`)
+//     },
+//     sleep: function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+//     },
+//     play: function(amount){
+//         this.energy -= amount;
+//         console.log(`${this.name} is playing and energy is now ${this.energy}`)
+//     }
+// }
 
-function Animal(name, energy=10){
-    let animal = {};
-    animal.name = name;
-    animal.energy = energy;
+// function Animal(name, energy=10){
+//     let animal = {};
+//     animal.name = name;
+//     animal.energy = energy;
 
-    animal.eat = animalMethods.eat
-    animal.sleep = animalMethods.sleep
-    animal.play = animalMethods.play
+//     animal.eat = animalMethods.eat
+//     animal.sleep = animalMethods.sleep
+//     animal.play = animalMethods.play
 
-    return animal
-}
+//     return animal
+// }
 
-let buddy = Animal('Buddy', 10);
-buddy.eat(10);
-buddy.play(5);
+// let buddy = Animal('Buddy', 10);
+// buddy.eat(10);
+// buddy.play(5);
 
-let leo = Animal('Leo', 20);
-leo.eat(5);
-leo.play(15);
+// let leo = Animal('Leo', 20);
+// leo.eat(5);
+// leo.play(15);
 
-console.log(leo.eat === buddy.eat);
+// console.log(leo.eat === buddy.eat);
 
 
 console.log('================================')
@@ -185,3 +185,45 @@ childObj.name = 'William';
 
 console.log(childObj);
 childObj.getInfo();
+
+//////////////////////////////////////////////////////////////////
+// Function Instantiation with Shared Methods and Object.create //
+//////////////////////////////////////////////////////////////////
+
+const animalMethods = {
+    eat: function(amount){
+        this.energy += amount;
+        console.log(`${this.name} is eating and energy is now ${this.energy}`)
+    },
+    sleep: function(amount){
+        this.energy += amount;
+        console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+    },
+    play: function(amount){
+        this.energy -= amount;
+        console.log(`${this.name} is playing and energy is now ${this.energy}`)
+    }
+}
+
+function Animal(name, energy=10){
+    let animal = Object.create(animalMethods);
+    animal.name = name;
+    animal.energy = energy;
+
+    return animal
+}
+
+let buddy = Animal('Buddy', 10);
+buddy.eat(10);
+buddy.play(5);
+console.log(buddy);
+
+let leo = Animal('Leo', 20);
+leo.eat(5);
+leo.play(15);
+console.log(leo);
+
+
+function doNothing(){};
+console.log(doNothing.prototype);
+console.log(typeof doNothing.prototype);
