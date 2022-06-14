@@ -45,28 +45,72 @@ person3.sayHello();
 console.clear()
 // JavaScript Object Instantiation -> classes
 
-let animal = {};
-animal.name = 'Buddy';
-animal.energy = 10;
+// let animal = {};
+// animal.name = 'Buddy';
+// animal.energy = 10;
 
-animal.eat = function(amount){
-    this.energy += amount;
-    console.log(`${this.name} is eating and energy is now ${this.energy}`)
-}
+// animal.eat = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is eating and energy is now ${this.energy}`)
+// }
 
-animal.sleep = function(amount){
-    this.energy += amount;
-    console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
-}
+// animal.sleep = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+// }
 
-animal.play = function(amount){
-    this.energy -= amount;
-    console.log(`${this.name} is playing and energy is now ${this.energy}`)
-}
-console.log(animal);
+// animal.play = function(amount){
+//     this.energy -= amount;
+//     console.log(`${this.name} is playing and energy is now ${this.energy}`)
+// }
+// console.log(animal);
 
-animal.eat(10);
-animal.play(15);
-animal.sleep(20);
-console.log(animal);
+// animal.eat(10);
+// animal.play(15);
+// animal.sleep(20);
+// console.log(animal);
+
+
+////////////////////////////
+// Function Instantiation //
+////////////////////////////
+
+// function Animal(name, energy=10){
+//     let animal = {};
+//     animal.name = name;
+//     animal.energy = energy;
+
+//     animal.eat = function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is eating and energy is now ${this.energy}`)
+//     }
+
+//     animal.sleep = function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is sleeping and energy is now ${this.energy}`)
+//     }
+
+//     animal.play = function(amount){
+//         this.energy -= amount;
+//         console.log(`${this.name} is playing and energy is now ${this.energy}`)
+//     }
+
+//     return animal
+// }
+
+// let buddy = Animal('Buddy', 10);
+// buddy.eat(10);
+// buddy.play(5);
+
+// let leo = Animal('Leo', 20);
+// leo.eat(5);
+// leo.play(15);
+
+// console.log(leo.eat === buddy.eat);
+
+
+
+////////////////////////////////////////////////
+// Function Instantiation with Shared Methods //
+////////////////////////////////////////////////
 
