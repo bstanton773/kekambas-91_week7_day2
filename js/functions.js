@@ -68,3 +68,32 @@ function addNums3(num1, num2=100){
 console.log(addNums3(10));
 console.log(addNums3(10, 15));
 
+
+
+// Function variable declaration
+// var (let, const) nameOfVariable = function(){ code to call when executed }
+var addSomeNums = function(){
+    let num1 = 100;
+    let num2 = 200;
+    return num1 + num2
+}
+
+console.log(addSomeNums);
+console.log(addSomeNums());
+
+
+let addMoreNums = function(num1, num2){
+    return num1 + num2
+}
+
+console.log(addMoreNums);
+console.log(addMoreNums(10,20));
+
+
+const anotherFunc = function someCoolNameFunc(a, b){
+    return b - a
+}
+
+console.log(anotherFunc);
+console.log(anotherFunc(20,50));
+
