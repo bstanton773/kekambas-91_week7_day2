@@ -150,3 +150,38 @@ leo.eat(5);
 leo.play(15);
 
 console.log(leo.eat === buddy.eat);
+
+
+console.log('================================')
+// Object.create
+
+let parent = {
+    firstName: 'Margaret',
+    lastName: "O'Riley",
+    heritage: 'Irish'
+}
+
+console.log(parent);
+console.log(parent.firstName);
+console.log(parent.lastName);
+console.log(parent.heritage);
+
+let child = Object.create(parent);
+child.firstName = 'Seamus';
+console.log(child);
+console.log(child.firstName);
+console.log(child.lastName);
+console.log(child.heritage);
+
+
+let parentObj = {
+    name: 'Hubert',
+    getInfo: function(){console.log(`Hello ${this.name}`)}
+}
+
+let childObj = Object.create(parentObj);
+
+childObj.name = 'William';
+
+console.log(childObj);
+childObj.getInfo();
